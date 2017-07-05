@@ -1,4 +1,4 @@
-#Fireworks Animation
+# Fireworks Animation
 
 Enjoy some fireworks by clicking on the screen.
 
