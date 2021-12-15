@@ -87,17 +87,22 @@
 
     <script>
         function shareLink(){
-            console.log("HERE");
+            var custURL = new URL("https://www.markasfour.com/fireworks/");
+            custURL.searchParams.append('message', document.getElementById("message").value);
+            custURL.searchParams.append('from', document.getElementById("from").value);
+            custURL.searchParams.append('to', document.getElementById("to").value);
+            custURL.searchParams.append('fullscreen', true);
             if(navigator.share){//use web api
                 navigator.share({
                     title: 'Fireworks Message',
-                    url: 'https://markasfour.com/fireworks/'
+                    url: custURL 
                 }).then(() => {
                     console.log("Thanks for sharing!");
                 }).catch(console.error);
             }
             else{
                 console.log("Web API not supported");
+                console.log(custURL);
             }
         }
     </script>

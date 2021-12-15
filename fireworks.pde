@@ -17,6 +17,27 @@ int fontSize = 50;
 bool fullscreen = false;
 
 void setup(){
+  String url = window.location.href;
+  if(url.indexOf('?') != -1){
+    String paramString = url.split('?')[1];
+    console.log(paramString);
+    let queryString = new URLSearchParams(paramString);
+    for(int i = 0; i < queryString.Length; i++){
+        if(queryString[i][0] == "message"){
+            document.getElementBYId("message").value = queryString[i][1];
+        }
+        else if(queryString[i][0] == "from"){
+            document.getElementById("from").value = queryString[i][1]; 
+        }
+        else if(queryString[i][0] == "to"){
+            document.getElementById("to").value = queryString[i][1];
+        }
+        else if(queryString[i][0] == "fullscreen"){
+            document.getElementById("fullscreen").checked = queryString[i][1];
+        }
+    }
+  }
+  
   fullscreen = document.getElementById("fullscreen").checked;
 
   if(fullscreen){
