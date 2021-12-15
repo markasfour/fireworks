@@ -28,9 +28,9 @@
 <body>
 <div id="main-container">
     <script>
-        String url = window.location.href;
+        var url = window.location.href;
         if(url.indexOf('?') != -1){
-          String paramString = url.split('?')[1];
+          var paramString = url.split('?')[1];
           console.log(paramString);
           let queryString = new URLSearchParams(paramString);
           for(int i = 0; i < queryString.Length; i++){
