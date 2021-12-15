@@ -85,8 +85,25 @@
         </button>
     </div>
 
+    <script>
+        function shareLink(){
+            console.log("HERE");
+            if(navigator.share){//use web api
+                navigator.share({
+                    title: 'Fireworks Message',
+                    url: 'https://markasfour.com/fireworks/'
+                }).then(() => {
+                    console.log("Thanks for sharing!");
+                }).catch(console.error);
+            }
+            else{
+                console.log("Web API not supported");
+            }
+        }
+    </script>
+
     <div align="center">
-        <button id="share" onclick="">
+        <button id="share" onclick="shareLink()">
             Share Your Message! <i class="fa fa-share"></i>
         </button>
     </div>

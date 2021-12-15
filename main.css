@@ -232,6 +232,7 @@ input:checked + .slider:before {
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 
 #share {
@@ -244,5 +245,5 @@ input:checked + .slider:before {
     z-index: 500;
     top: 0;
     left: 0;
-
+    cursor: pointer;
 }
