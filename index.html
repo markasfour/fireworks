@@ -35,7 +35,7 @@
           for(let pair of queryString.entries()){
 	    console.log(pair[0] + " " + pair[1]);
             if(pair[0] == "message"){
-              document.getElementBYId("message").value = pair[1];
+              document.getElementById("message").value = pair[1];
             }
             else if(pair[0] == "from"){
               document.getElementById("from").value = pair[1]; 
