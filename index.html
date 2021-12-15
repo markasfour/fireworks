@@ -26,30 +26,7 @@
 </head>
 
 <body>
-<div id="main-container">
-    <script>
-        let url = window.location.href;
-        if(url.indexOf('?') != -1){
-          let paramString = url.split('?')[1];
-          let queryString = new URLSearchParams(paramString);
-          for(let pair of queryString.entries()){
-	    console.log(pair[0] + " " + pair[1]);
-            if(pair[0] == "message"){
-              document.getElementById("message").value = pair[1];
-            }
-            else if(pair[0] == "from"){
-              document.getElementById("from").value = pair[1]; 
-            }
-            else if(pair[0] == "to"){
-              document.getElementById("to").value = pair[1];
-            }
-            else if(pair[0] == "fullscreen"){
-              document.getElementById("fullscreen").checked = pair[1];
-            }
-          }
-        }
-    </script>
-    
+<div id="main-container"> 
     <!--TOP HEADER-->
 	<div id="logo" align="center">
 	    Fireworks Message	
@@ -140,6 +117,29 @@
 	<div id="footer">
 		<p id="footer"><i class="fa fa-copyright"></i> 2022 Mark Asfour</p> 
 	</div>
+
+    <script>
+        let url = window.location.href;
+        if(url.indexOf('?') != -1){
+          let paramString = url.split('?')[1];
+          let queryString = new URLSearchParams(paramString);
+          for(let pair of queryString.entries()){
+	    console.log(pair[0] + " " + pair[1]);
+            if(pair[0] == "message"){
+              document.getElementById("message").value = pair[1];
+            }
+            else if(pair[0] == "from"){
+              document.getElementById("from").value = pair[1]; 
+            }
+            else if(pair[0] == "to"){
+              document.getElementById("to").value = pair[1];
+            }
+            else if(pair[0] == "fullscreen"){
+              document.getElementById("fullscreen").checked = pair[1];
+            }
+          }
+        }
+    </script>
 </div>
 </body>
 </html>
