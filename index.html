@@ -103,6 +103,13 @@
             else{
                 console.log("Web API not supported");
                 console.log(custURL);
+                try{ 
+                    navigator.clipboard.writeText(custURL);
+                    alert("Link copied to clipboard");
+                }
+                catch(e){
+                    alert(custURL);
+                }
             }
         }
     </script>
