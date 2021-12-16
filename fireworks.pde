@@ -81,8 +81,9 @@ void draw(){
   drawBackgroundSky();
   
   if(auto && (frameCount % 10) == 0){
-    mouseX = int(random(width * 0.45, width * 0.55));
-    mousePressed();
+    int tempX = int(random(width * 0.45, width * 0.55));
+    projectiles.add(new projectile(tempX));
+    //mousePressed();
   }
   
   //String message = "Great Job!";
@@ -90,11 +91,11 @@ void draw(){
   textSize(fontSize);
   textAlign(CENTER, CENTER);
   fill(#EE1D52, 255);
-  text(message, width * .1, 0, width * .8 + 5, height + 5);   
+  text(message, width * .1, 0, width * .8 + (fontSize/12), height + (fontSize/12));   
   textSize(fontSize);
   textAlign(CENTER, CENTER);
   fill(#69C9D0, 255);
-  text(message, width * .1, 0, width * .8 - 5, height - 5);  
+  text(message, width * .1, 0, width * .8 - (fontSize/12), height - (fontSize/12));  
   textSize(fontSize);
   textAlign(CENTER, CENTER);
   //fill(255, 51, 119, 200);
@@ -151,11 +152,12 @@ void draw(){
 }
 
 void mousePressed(){
-   projectiles.add(new projectile(mouseX));
+  console.log("Mouse pressed");
+  projectiles.add(new projectile(mouseX));
 }
 
 void keyPressed(){
-  auto = !auto; 
+  //auto = !auto; 
 }
 
 void drawBackgroundSky(){
