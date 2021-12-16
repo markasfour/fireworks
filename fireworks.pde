@@ -304,19 +304,20 @@ class forest{
    ArrayList <tree> trees;
    
    forest(int n){
-       console.log(n);
       trees = new ArrayList <tree>();
       int j = 0;
       int row = 0;
       for(int i = 0; i < n; i++){
-        if((row * pine.width/2) + j * (pine.width) > width) {
+        /*if((row * pine.width/2) + j * (pine.width) > width) {
           j = 0;
           row++;
         }
         int r = (row * pine.width/2) + int(random(-1 * pine.width/2, pine.width/2));
         tree t = new tree((j * pine.width) + r, height - pine.height + int(random(-7, 7))); 
         trees.add(t);
-        j++;
+        j++;*/
+        tree t = new tree(random(0, width), height - 65 + int(random(-7, 7)));
+        trees.add(t);
       }
    }
    
