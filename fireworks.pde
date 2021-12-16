@@ -91,11 +91,11 @@ void draw(){
   textSize(fontSize);
   textAlign(CENTER, CENTER);
   fill(#EE1D52, 255);
-  text(message, width * .1, 0, width * .8 + (fontSize/12), height + (fontSize/12));   
+  text(message, width * .1, 0, width * .8 + 5, height + 5);   
   textSize(fontSize);
   textAlign(CENTER, CENTER);
   fill(#69C9D0, 255);
-  text(message, width * .1, 0, width * .8 - (fontSize/12), height - (fontSize/12));  
+  text(message, width * .1, 0, width * .8 - 5, height - 5);  
   textSize(fontSize);
   textAlign(CENTER, CENTER);
   //fill(255, 51, 119, 200);
